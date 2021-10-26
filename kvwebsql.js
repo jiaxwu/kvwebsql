@@ -341,7 +341,7 @@ export default class KVWebSQL {
    * @throws {Error}
    */
   async removeTable() {
-    return this.transaction(`DROP TABLE ${this.tableName}`, [], false);
+    return this.transaction(`DROP TABLE IF EXISTS ${this.tableName}`, [], false);
   }
 
   /**
