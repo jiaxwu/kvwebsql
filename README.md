@@ -7,7 +7,7 @@
 
 ### Step 1 引入文件
 
-拷贝kvwebsql.js到目录下，并导入
+拷贝[kvwebsql.js](https://github.com/XiaoHuaShiFu/kvwebsql/blob/main/kvwebsql.js)到目录下，并导入
 
 ```javascript
 import KVWebSQL from './kvwebsql'
