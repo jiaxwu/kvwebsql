@@ -300,6 +300,9 @@ export default class KVWebSQL {
    * @throws {Error}
    */
   openDb() {
+    if (this.isOpenDb()) {
+      return;
+    }
     this.webSQL = openDatabase(this.dbName, "1.0", "由Kvite创建", 0);
   }
 
@@ -307,6 +310,9 @@ export default class KVWebSQL {
    * 关闭数据库，关闭后无法对数据库进行操作
    */
   closeDb() {
+    if (!this.isOpenDb()) {
+      return;
+    }
     this.webSQL = null;
   }
 
