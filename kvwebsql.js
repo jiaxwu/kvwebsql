@@ -128,7 +128,7 @@ export default class KVWebSQL {
    */
   async get(key) {
     const res = await this.transaction(
-      `SELECT key, value FROM ${this.tableName} WHERE key = ?`,
+      `SELECT value FROM ${this.tableName} WHERE key = ?`,
       [this.keySerializer(key)],
       true
     );
@@ -137,7 +137,7 @@ export default class KVWebSQL {
 
   /**
    * 移除值
-   * @param {Object} key  键
+   * @param {Object} key 键
    * @throws {Error}
    */
   async remove(key) {
