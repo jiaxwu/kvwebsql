@@ -387,10 +387,10 @@ export default class KVWebSQL {
   }
 
   /**
-   * 检查WebSQL是否正常
+   * 检查数据库是否正常
    * @throws {Error}
    */
-  checkWebSQL() {
+  checkDb() {
     if (!this.isOpenDb()) {
       throw new Error("请先打开数据库");
     }
@@ -404,7 +404,7 @@ export default class KVWebSQL {
    * @returns {SQLResultSetRowList} 执行结果
    */
   async transaction(sql, params, needRes) {
-    this.checkWebSQL();
+    this.checkDb();
     return new Promise((resolve, reject) => {
       this.webSQL.transaction((tx) => {
         tx.executeSql(

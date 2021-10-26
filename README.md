@@ -80,5 +80,5 @@ API都在KVWebSQL类上，一个KVWebSQL代表一个数据库的一个表
 | isOpenDb()                              |           |               |           | Boolean             | 数据库是否打开                                     |
 | async createTable()                     |           |               |           |                     | 创建表                                             |
 | async removeTable()                     |           |               |           |                     | 删除表                                             |
-| checkWebSQL()                           |           |               |           |                     | 检查WebSQL是否正常                                 |
+| checkDb()                               |           |               |           |                     | 检查数据库是否正常                                 |
 | async transaction(sql, params, needRes) | String    | Array<Object> | Boolean   | SQLResultSetRowList | 执行事务的封装                                     |
