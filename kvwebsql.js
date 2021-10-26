@@ -89,7 +89,7 @@ export default class KVWebSQL {
    */
   async init() {
     this.openDb();
-    this.createTable();
+    return this.createTable();
   }
 
   /**
