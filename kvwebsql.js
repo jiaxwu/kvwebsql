@@ -240,6 +240,27 @@ export default class KVWebSQL {
   }
 
   /**
+   * 获取全部key-value，返回Array集合
+   * @returns {Array<Object>} entries
+   * @throws {Error}
+   */
+  async entries() {
+    const res = await this.transaction(
+      `SELECT key, value FROM ${this.tableName}`,
+      [],
+      true
+    );
+    const entries = new Array(res.length);
+    for (let i = 0; i < res.length; i++) {
+      entries[i] = {
+        key: this.keyDeserializer(res[i].key),
+        value: this.valueDeserializer(res[i].value),
+      };
+    }
+    return entries;
+  }
+
+  /**
    * 获取全部key-value，返回Map集合
    * @returns {Map<Object, Object>} map
    * @throws {Error}

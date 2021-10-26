@@ -47,26 +47,27 @@ await userTable.remove('小红')
 
 API都在KVWebSQL类上，一个KVWebSQL代表一个数据库的一个表
 
-| api                                                  | 参数1类型        | 参数2类型 | 返回值类型          | 说明                           |
-| ---------------------------------------------------- | ---------------- | --------- | ------------------- | ------------------------------ |
-| static async buildDefaultKVWebSQL(dbName, tableName) | String           | String    | KVWebSQL            | 创建一个KVWebSQL，会自动初始化 |
-| async put(key, value)                                | Object           | Object    |                     | 设置值，不存在插入，存在则更新 |
-| async get(key)                                       | Object           |           | Object              | 获取值，不存在返回null         |
-| async remove(key)                                    | Object           |           |                     | 移除值                         |
-| async containsKey(key)                               | Object           |           | Boolean             | 表是否包含key                  |
-| async clear()                                        |                  |           |                     | 清空表                         |
-| async size()                                         |                  |           | Number              | 获取表的记录数                 |
-| async keys()                                         |                  |           | Array<Object>       | 获取全部key，返回Array集合     |
-| async keySet()                                       |                  |           | Set<Object>         | 获取全部key，返回Set集合       |
-| async values()                                       |                  |           | Array<Object>       | 获取全部value，返回Array集合   |
-| async map()                                          |                  |           | Map<Object, Object> | 获取全部key-value，返回Map集合 |
-| async isEmpty()                                      |                  |           | Boolean             | 表是否为空                     |
-| setKeySerializer(serializer)                         | Object => Object |           |                     | 设置key序列化器                |
-| setKeyDeserializer(deserializer)                     | Object => Object |           |                     | 设置key反序列化器              |
-| setValueSerializer(serializer)                       | Object => Object |           |                     | 设置value序列化器              |
-| setValueDeserializer(deserializer)                   | Object => Object |           |                     | 设置value反序列化器            |
-| getDbName()                                          |                  |           | String              | 获取数据库名                   |
-| getTableName()                                       |                  |           | String              | 表名                           |
+| api                                                  | 参数1类型        | 参数2类型 | 返回值类型          | 说明                             |
+| ---------------------------------------------------- | ---------------- | --------- | ------------------- | -------------------------------- |
+| static async buildDefaultKVWebSQL(dbName, tableName) | String           | String    | KVWebSQL            | 创建一个KVWebSQL，会自动初始化   |
+| async put(key, value)                                | Object           | Object    |                     | 设置值，不存在插入，存在则更新   |
+| async get(key)                                       | Object           |           | Object              | 获取值，不存在返回null           |
+| async remove(key)                                    | Object           |           |                     | 移除值                           |
+| async containsKey(key)                               | Object           |           | Boolean             | 表是否包含key                    |
+| async clear()                                        |                  |           |                     | 清空表                           |
+| async size()                                         |                  |           | Number              | 获取表的记录数                   |
+| async keys()                                         |                  |           | Array<Object>       | 获取全部key，返回Array集合       |
+| async keySet()                                       |                  |           | Set<Object>         | 获取全部key，返回Set集合         |
+| async values()                                       |                  |           | Array<Object>       | 获取全部value，返回Array集合     |
+| async entries()                                      |                  |           | Array<Object>       | 获取全部key-value，返回Array集合 |
+| async map()                                          |                  |           | Map<Object, Object> | 获取全部key-value，返回Map集合   |
+| async isEmpty()                                      |                  |           | Boolean             | 表是否为空                       |
+| setKeySerializer(serializer)                         | Object => Object |           |                     | 设置key序列化器                  |
+| setKeyDeserializer(deserializer)                     | Object => Object |           |                     | 设置key反序列化器                |
+| setValueSerializer(serializer)                       | Object => Object |           |                     | 设置value序列化器                |
+| setValueDeserializer(deserializer)                   | Object => Object |           |                     | 设置value反序列化器              |
+| getDbName()                                          |                  |           | String              | 获取数据库名                     |
+| getTableName()                                       |                  |           | String              | 表名                             |
 
 其他API，同样在KVWebSQL上，用于实现上面的API，有风险，若使用请谨慎
 
