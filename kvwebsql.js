@@ -2,7 +2,7 @@
 /**
  * KVWebSQL
  */
- export default class KVWebSQL {
+export default class KVWebSQL {
   /**
    * 数据库实例
    */
@@ -66,6 +66,12 @@
    */
   static jsonDeserializer = (s) => JSON.parse(s);
 
+  /**
+   * 创建KVWebSQL实例
+   * @param {String} dbName 数据库名
+   * @param {String} tableName 表名
+   * @throws {Error}
+   */
   constructor(dbName, tableName) {
     if (!dbName) {
       throw new Error("数据库名不能为空");
