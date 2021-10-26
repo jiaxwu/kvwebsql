@@ -84,15 +84,6 @@ export default class KVWebSQL {
   }
 
   /**
-   * 初始化KVWebSQL
-   * @throws {Error}
-   */
-  async init() {
-    this.openDb();
-    return this.createTable();
-  }
-
-  /**
    * 创建一个默认KVWebSQL
    *
    * @param {String} dbName 数据库名
@@ -104,6 +95,15 @@ export default class KVWebSQL {
     const kvWebSQL = new KVWebSQL(dbName, tableName);
     await kvWebSQL.init();
     return kvWebSQL;
+  }
+
+  /**
+   * 初始化KVWebSQL
+   * @throws {Error}
+   */
+  async init() {
+    this.openDb();
+    return this.createTable();
   }
 
   /**
